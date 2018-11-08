@@ -1,5 +1,4 @@
-# FROM tells us where to start
-## here we're using a base image from a registry (DockerHub) to build a base image of an Ubuntu operating system
+# FROM tells us where to start - which base image to use
 FROM ubuntu:16.04 
 
 # RUN gives specific instructions to the environment
@@ -8,10 +7,11 @@ RUN apt-get update -qqq
 RUN whoami
 
 # ENTRYPOINT dictates what happens when the computer turns on
-ENTRYPOINT ["/bin/echo","hi","world"]
+#ENTRYPOINT ["/bin/echo","hi","world"]
 
 # install python
 RUN apt-get install python-pip python-dev build-essential -y
+RUN pip install --upgrade pip
 
 # install python libraries
 RUN pip install numpy 
@@ -19,10 +19,10 @@ RUN pip install pandas
 RUN pip install statsmodels
 
 # add data
-ADD hie_data.csv
+ADD hie_data.csv /
 
 # add script
-ADD hie_analysis.py
+ADD hie_analysis.py /
 
+# run script - CMD tells Docker to execute the command when the image loads
 CMD ["python","./hie_analysis.py"]
-
