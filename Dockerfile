@@ -11,12 +11,12 @@ RUN whoami
 ENTRYPOINT ["/bin/echo","hi","world"]
 
 # install python
-CMD ["sudo","apt-get","install","python"]
+RUN apt-get install python-pip python-dev build-essential -y
 
 # install python libraries
-CMD ["sudo", "pip", "install", "numpy"]
-CMD ["sudo", "pip", "install", "pandas"]
-CMD ["sudo", "pip", "install", "statsmodels"]
+RUN pip install numpy 
+RUN pip install pandas
+RUN pip install statsmodels
 
 # add data
 ADD hie_data.csv
