@@ -18,6 +18,4 @@ ADD hie_analysis.py /opt/hie_analysis.py
 
 # run analysis
 ENTRYPOINT ["python", "/opt/hie_analysis.py"] 
-
-# add data (added in a volume in the command to run the image)
-CMD 
+ 

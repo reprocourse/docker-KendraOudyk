@@ -4,7 +4,7 @@ import numpy as np
 from statsmodels.formula.api import MNLogit
 
 # LOAD DATA
-hie = pd.read_csv('hie_data.csv', na_values='nd')
+hie = pd.read_csv('./data/hie_data.csv', na_values='nd')
 
 # DEFINE VARIABLES
 ## predictors (copeptin, NSE, and intercept)
