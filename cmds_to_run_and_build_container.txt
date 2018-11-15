@@ -1,0 +1,5 @@
+terminal commands to run container:
+
+$ docker build -t hieimage .
+$ docker run -v /home/kendra/Documents/NEUR602/assignments/assignment6/data:/data hieimage /data/hie_data.csv -n nd
+
